@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
 class App extends Component {
@@ -16,18 +16,18 @@ class App extends Component {
           <Route
             exact
             path="/customers"
-            component={this.renderCustomerContainer}
-          />
-          <Route
-            exact
-            path="/customers/:dni"
             component={this.renderCustomerListContainer}
           />
-          <Route
-            exact
-            path="/customers/new"
-            component={this.renderCustomerNewContainer}
-          />
+          <Switch>
+            <Route //always put as the first option of the switch the most specific url
+              path="/customers/new"
+              component={this.renderCustomerNewContainer}
+            />
+            <Route
+              path="/customers/:dni"
+              component={this.renderCustomerContainer}
+            />
+          </Switch>
         </div>
       </Router>
     );
