@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import CustomerListItem from "./CustomerListItem";
 
-const CustomerList = ({ customers }) => {
+const CustomerList = ({ customers, urlPath }) => {
   return (
     <div>
       <div className="customer-list">
@@ -13,6 +13,7 @@ const CustomerList = ({ customers }) => {
             editAction={"Edit"}
             delAction={"Delete"}
             urlPath={urlPath}
+            dni={customer.dni}
           />
         ))}
       </div>
