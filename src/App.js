@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomeContainer from "./containers/HomeContainer";
 import "./App.css";
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={this.renderHomer} />
+          <Route exact path="/" component={HomeContainer} />
           <Route
             exact
             path="/customers"
