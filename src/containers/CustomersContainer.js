@@ -26,7 +26,7 @@ const customers = [
 class CustomersContainer extends Component {
   handleAddNew = () => {
     console.log("handle Add New On click");
-    //this.props.history.push("/customers");
+    this.props.history.push("/customers/new");
   };
 
   renderBody = customers => (
