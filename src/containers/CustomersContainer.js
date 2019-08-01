@@ -12,7 +12,6 @@ class CustomersContainer extends Component {
     this.props.fetchCustomers();
   }
   handleAddNew = () => {
-    console.log("handle Add New On click");
     this.props.history.push("/customers/new");
   };
 
