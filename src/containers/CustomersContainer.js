@@ -6,7 +6,7 @@ import { fetchCustomers } from "../actions/fetchCustomers";
 import AppFrame from "../components/AppFrame";
 import CustomerList from "../components/CustomerList";
 import CustomerActions from "../components/CustomerActions";
-
+import { getCustomers } from "../selectors/customers";
 class CustomersContainer extends Component {
   componentDidMount() {
     this.props.fetchCustomers();
@@ -42,34 +42,13 @@ CustomersContainer.propTypes = {
   customers: PropTypes.array.isRequired
 };
 
-CustomersContainer.defaultProps = {
-  customers: [
-    {
-      dni: "27000000",
-      name: "Juan Perez",
-      age: 37
-    },
-    {
-      dni: "30000000",
-      name: "Maria Vargas",
-      age: 35
-    },
-    {
-      dni: "33000000",
-      name: "Luis Martinez",
-      age: 32
-    },
-    {
-      dni: "28000000",
-      name: "Pedro Perez",
-      age: 30
-    }
-  ]
-};
+CustomersContainer.defaultProps = { customers: [] };
+
+const mapStateToProps = state => ({ customers: getCustomers(state) });
 
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     { fetchCustomers }
   )(CustomersContainer)
 );
