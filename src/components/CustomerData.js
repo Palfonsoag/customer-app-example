@@ -7,15 +7,15 @@ const CustomerData = ({ name, dni, age }) => {
       <div className="customer-data">
         <h2>{"Customer Info"}</h2>
         <div>
-          <strong>{"Name"}</strong>
+          <strong>{"Name: "}</strong>
           <i>{name}</i>
         </div>
         <div>
-          <strong>{"DNI"}</strong>
+          <strong>{"DNI: "}</strong>
           <i>{dni}</i>
         </div>
         <div>
-          <strong>{"Age"}</strong>
+          <strong>{"Age: "}</strong>
           <i>{age}</i>
         </div>
       </div>

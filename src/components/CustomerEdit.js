@@ -6,7 +6,7 @@ const CustomerEdit = ({ name, dni, age }) => {
     <div>
       <h2>{"Customer Edition"}</h2>
       <h3>
-        {name} / {dni} / {age}
+        Name: {name} / DNI: {dni} / Age: {age}
       </h3>
     </div>
   );
