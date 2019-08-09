@@ -19,7 +19,7 @@ class CustomersContainer extends Component {
     <div>
       <CustomerList customers={customers} urlPath={"customers/"} />
       <CustomerActions>
-        <button onClick={this.handleAddNew}>Nuevo Cliente</button>
+        <button onClick={this.handleAddNew}>New Client</button>
       </CustomerActions>
     </div>
   );
@@ -27,10 +27,7 @@ class CustomersContainer extends Component {
     const { customers } = this.props;
     return (
       <div>
-        <AppFrame
-          header="Listado de clientes"
-          body={this.renderBody(customers)}
-        />
+        <AppFrame header="Client's list" body={this.renderBody(customers)} />
       </div>
     );
   }
