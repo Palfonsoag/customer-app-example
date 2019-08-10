@@ -30,18 +30,6 @@
       "age": 35
     },
     {
-      "id": "33000000",
-      "dni": "33000000",
-      "name": "Luis Martinez",
-      "age": 32
-    },
-    {
-      "id": "28000000",
-      "dni": "28000000",
-      "name": "Pedro Perez",
-      "age": 30
-    },
-    {
       "name": "Pedro ",
       "dni": "123456789",
       "age": 24,
@@ -52,18 +40,6 @@
       "dni": "12542",
       "age": 22,
       "id": "y7HL_WT"
-    },
-    {
-      "name": "nuevo cliente",
-      "dni": "545566156",
-      "age": 72,
-      "id": "NU1fhYJ"
-    },
-    {
-      "name": "cliente fixed",
-      "dni": "13246578",
-      "age": 25,
-      "id": "zfEg5Ah"
     }
   ]
 }
