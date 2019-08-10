@@ -7,9 +7,9 @@ import CustomerActions from "./CustomerActions";
 const isRequired = value => !value && "This Field is required";
 
 const isNumber = value => isNaN(Number(value)) && "This field must be a number";
-
+const toNumber = value => value && Number(value);
+const toUpper = value => value && value.toUpperCase();
 const validate = values => {
-  console.log("valueeeeeeees", values);
   const error = {};
   if (!values.name) {
     error.name = "Name field is required";
@@ -55,6 +55,7 @@ const CustomerEdit = ({ name, dni, age, handleSubmit, submitting, onBack }) => {
           type="number"
           validate={[isNumber, isRequired]}
           label="Age: "
+          parse={toNumber}
         />
         <CustomerActions>
           <button type="submit" disabled={submitting}>
