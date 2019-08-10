@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { reduxForm, Field } from "redux-form";
+import { Prompt } from "react-router-dom";
 import { setPropsAsInitial } from "../helpers/setPropsAsInitial";
 import CustomerActions from "./CustomerActions";
 
@@ -28,7 +29,16 @@ const MyField = ({ input, meta, type, label, name }) => (
   </div>
 );
 
-const CustomerEdit = ({ name, dni, age, handleSubmit, submitting, onBack }) => {
+const CustomerEdit = ({
+  name,
+  dni,
+  age,
+  handleSubmit,
+  submitting,
+  onBack,
+  pristine,
+  submitSucceeded
+}) => {
   return (
     <div>
       <h2>{"Customer Edition"}</h2>
@@ -58,13 +68,17 @@ const CustomerEdit = ({ name, dni, age, handleSubmit, submitting, onBack }) => {
           parse={toNumber}
         />
         <CustomerActions>
-          <button type="submit" disabled={submitting}>
+          <button type="submit" disabled={pristine || submitting}>
             Accept
           </button>
-          <button onClick={onBack} disabled={submitting}>
+          <button onClick={onBack} type="button" disabled={submitting}>
             Cancel
           </button>
         </CustomerActions>
+        <Prompt
+          when={!pristine && !submitSucceeded}
+          message="the changes would be lost if you continue"
+        />
       </form>
     </div>
   );
