@@ -21,15 +21,25 @@ const validate = values => {
   return error;
 };
 
-const MyField = ({ input, meta, type, label, name }) => (
-  <div>
-    <label htmlFor={name}>{label} </label>
-    <input type={type ? type : "text"} {...input} />
-    {meta.touched && meta.error && <span>{meta.error}</span>}
-  </div>
-);
-
 class CustomerEdit extends Component {
+  componentDidMount() {
+    if (this.txt) {
+      this.txt.focus();
+    }
+  }
+
+  renderField = ({ input, meta, type, label, name, withFocus }) => (
+    <div>
+      <label htmlFor={name}>{label} </label>
+      <input
+        type={type ? type : "text"}
+        {...input}
+        ref={withFocus && (txt => (this.txt = txt))}
+      />
+      {meta.touched && meta.error && <span>{meta.error}</span>}
+    </div>
+  );
+
   render() {
     const {
       handleSubmit,
@@ -43,8 +53,9 @@ class CustomerEdit extends Component {
         <h2>{"Customer Edition"}</h2>
         <form onSubmit={handleSubmit}>
           <Field
+            withFocus
             name="name"
-            component={MyField}
+            component={this.renderField}
             type="text"
             //validate={isRequired}
             label="Nombre: "
@@ -52,7 +63,7 @@ class CustomerEdit extends Component {
 
           <Field
             name="dni"
-            component={MyField}
+            component={this.renderField}
             type="text"
             validate={[isNumber]}
             label="DNI: "
@@ -60,7 +71,7 @@ class CustomerEdit extends Component {
 
           <Field
             name="age"
-            component={MyField}
+            component={this.renderField}
             type="number"
             validate={[isNumber, isRequired]}
             label="Age: "
