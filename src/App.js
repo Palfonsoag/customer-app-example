@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomeContainer from "./containers/HomeContainer";
+import CustomersContainer from "./containers/CustomersContainer";
+import CustomerContainer from "./containers/CustomerContainer";
+import NewCustomerContainer from "./containers/NewCustomerContainer";
 import "./App.css";
 
 class App extends Component {
-  renderHomer = () => <h1>Home</h1>;
+  renderHomer = () => <HomeContainer />;
   renderCustomerContainer = () => <h1>Customer Container</h1>;
-  renderCustomerListContainer = () => <h1>Customer List Container</h1>;
-  renderCustomerNewContainer = () => <h1>Customer New Container</h1>;
+  renderCustomerListContainer = () => <CustomersContainer />;
+  renderCustomerNewContainer = () => <NewCustomerContainer />;
 
   render() {
     return (
@@ -25,7 +29,9 @@ class App extends Component {
             />
             <Route
               path="/customers/:dni"
-              component={this.renderCustomerContainer}
+              render={props => (
+                <CustomerContainer dni={props.match.params.dni} />
+              )}
             />
           </Switch>
         </div>

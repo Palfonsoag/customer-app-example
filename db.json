@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "customers": [
+    {
+      "id": "27000000",
+      "dni": "27000000",
+      "name": "Juan Perez",
+      "age": 28
+    },
+    {
+      "id": "30000000",
+      "dni": "30000000",
+      "name": "Maria Vargas",
+      "age": 35
+    },
+    {
+      "name": "Pedro ",
+      "dni": "123456789",
+      "age": 24,
+      "id": "FsjqIeP"
+    },
+    {
+      "name": "Juan jose",
+      "dni": "12542",
+      "age": 22,
+      "id": "y7HL_WT"
+    }
+  ]
+}
