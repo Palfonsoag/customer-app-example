@@ -13,7 +13,7 @@ const CustomerData = ({
 }) => {
   return (
     <div>
-      <div className="customer-data">
+      <div className="customers-data">
         <h2>{"Customer Info"}</h2>
         <div>
           <strong>{"Name: "}</strong>
