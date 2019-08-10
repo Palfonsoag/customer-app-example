@@ -34,22 +34,38 @@ class CustomerContainer extends Component {
     this.props.history.goBack();
   };
 
+  handleDelete = () => {
+    console.log("handle delete");
+  };
+
+  renderCustomerControl = (isEditing, isDeleting) => {
+    if (this.props.customer) {
+      const CustomerControl = isEditing ? CustomerEdit : CustomerData;
+      return (
+        <CustomerControl
+          {...this.props.customer}
+          onSubmit={this.handleSubmit}
+          onBack={this.handleOnBack}
+          onSubmitSuccess={this.handleOnSubmitSuccess}
+          isDeleteAllow={!!isDeleting}
+          onDelete={this.handleDelete}
+        />
+      );
+    }
+    return null;
+  };
+
   renderBody = () => (
     <Route
       path="/customers/:dni/edit"
-      children={({ match }) => {
-        if (this.props.customer) {
-          const CustomerControl = match ? CustomerEdit : CustomerData;
-          return (
-            <CustomerControl
-              {...this.props.customer}
-              onSubmit={this.handleSubmit}
-              onBack={this.handleOnBack}
-              onSubmitSuccess={this.handleOnSubmitSuccess}
-            />
-          );
-        }
-      }}
+      children={({ match: isEditing }) => (
+        <Route
+          path="/customers/:dni/delete"
+          children={({ match: isDeleting }) => {
+            return this.renderCustomerControl(isEditing, isDeleting);
+          }}
+        />
+      )}
     />
   );
   render() {

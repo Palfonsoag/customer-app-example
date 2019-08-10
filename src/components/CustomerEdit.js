@@ -9,7 +9,6 @@ const isRequired = value => !value && "This Field is required";
 
 const isNumber = value => isNaN(Number(value)) && "This field must be a number";
 const toNumber = value => value && Number(value);
-const toUpper = value => value && value.toUpperCase();
 const validate = values => {
   const error = {};
   if (!values.name) {

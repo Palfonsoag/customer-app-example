@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Route, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { SubmissionError } from "redux-form";
 import PropTypes from "prop-types";
 import AppFrame from "../components/AppFrame";
