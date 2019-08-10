@@ -16,23 +16,27 @@
   "profile": {
     "name": "typicode"
   },
-  "customers":[
+  "customers": [
     {
+      "id": "27000000",
       "dni": "27000000",
       "name": "Juan Perez",
-      "age": 37
+      "age": "39"
     },
     {
+      "id": "30000000",
       "dni": "30000000",
       "name": "Maria Vargas",
       "age": 35
     },
     {
+      "id": "33000000",
       "dni": "33000000",
       "name": "Luis Martinez",
       "age": 32
     },
     {
+      "id": "28000000",
       "dni": "28000000",
       "name": "Pedro Perez",
       "age": 30
