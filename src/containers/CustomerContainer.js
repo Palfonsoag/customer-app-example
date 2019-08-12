@@ -36,7 +36,6 @@ class CustomerContainer extends Component {
   };
 
   handleDelete = id => {
-    console.log("handle delete");
     this.props.deleteCustomer(id).then(v => {
       this.props.history.goBack();
     });
